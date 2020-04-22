@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Splash.qml</file>
+        <file>img/bouncePink.svg</file>
+        <file>img/bounceBlue.svg</file>
+        <file>img/glowy.jpg</file>
+        <file>img/background.jpg</file>
+        <file>img/backgroun2.png</file>
+        <file>img/calendar.svg</file>
+        <file>Splash2.qml</file>
+        <file>img/background.svg</file>
+        <file>img/background2.svg</file>
+        <file>img/plasma.svg</file>
+        <file>Made.qml</file>
+        <file>made_images/layer_1.png</file>
+        <file>made_images/vector_layer_1.png</file>
+    </qresource>
+</RCC>
