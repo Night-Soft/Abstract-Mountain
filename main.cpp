@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/Splash2.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/Splash4.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 

@@ -14,7 +14,7 @@ Window {
 
     Image {
         id: root
-        source: "./img/background3Birds.svg"
+        source: "./img/background4Green.svg"
         fillMode: Image.Stretch
         property int stage
         anchors.horizontalCenter: parent.horizontalCenter
@@ -54,7 +54,7 @@ Window {
                 anchors.horizontalCenter: parent.horizontalCenter
                 smooth: true
                 sourceSize: Qt.size(width, height)
-                source: "img/bouncePink.svg"
+                source: "img/bounceGreen.svg"
             }
 
             Text {
@@ -95,18 +95,17 @@ Window {
         Rectangle {
             id: secondsRect
             width: 550
-            height: 160
+            height: 81
             color: "#00000000"
-            anchors.bottom: loading.top
-            anchors.bottomMargin: -160
-            anchors.left: parent.left
-            anchors.leftMargin: 0
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 0
 
             Text {
                 id: date
                 x: 25
                 width: 501
-                height: 157
+                height: 150
                 Text {
                     id: hours
                     y: 118
@@ -196,12 +195,14 @@ Window {
 
         Rectangle {
             id: year
+            x: 415
+            y: 604
             width: 536
-            height: 220
+            height: 164
             color: "#00000000"
-            anchors.bottom: loading.top
-            anchors.bottomMargin: -300
-            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 0
+            anchors.horizontalCenter: parent.horizontalCenter
 
             Rectangle {
                 id: rectangle4
@@ -219,7 +220,7 @@ Window {
                     y: 156
                     width: 97
                     height: 71
-                    color: "#ffffff"
+                    color: "#252324"
                     radius: 10
                     anchors.verticalCenter: parent.verticalCenter
                     border.width: 0
@@ -231,7 +232,7 @@ Window {
                     y: 156
                     width: 103
                     height: 71
-                    color: "#ffffff"
+                    color: "#252324"
                     radius: 10
                     anchors.verticalCenter: parent.verticalCenter
                     border.width: 0
@@ -243,7 +244,7 @@ Window {
                     y: 156
                     width: 187
                     height: 71
-                    color: "#ffffff"
+                    color: "#252324"
                     radius: 10
                     anchors.verticalCenter: parent.verticalCenter
                     border.width: 0
@@ -255,7 +256,7 @@ Window {
                     y: 113
                     width: 501
                     height: 157
-                    color: "#0ad3cd"
+                    color: "#26c534"
                     text: Qt.formatDateTime(new Date(),"yyyy  MM  dd")
                     font.capitalization: Font.Capitalize
                     verticalAlignment: Text.AlignVCenter
@@ -352,22 +353,20 @@ Window {
         Rectangle {
             id: plasma5
             x: 1264
-            y: 533
             width: 102
-            height: 104
+            height: 88
             color: "#00000000"
+            anchors.top: parent.top
             anchors.rightMargin: 0
-            anchors.bottom: parent.bottom
             anchors.right: parent.right
 
             Image {
                 id: image
                 x: 262
-                y: 116
                 width: 70
                 height: 70
+                anchors.top: parent.top
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
                 source: "img/plasma.svg"
                 fillMode: Image.PreserveAspectCrop
                 sourceSize: Qt.size(width, height);
@@ -417,3 +416,9 @@ Window {
 
 }
 
+
+/*##^##
+Designer {
+    D{i:25;anchors_y:116}D{i:24;anchors_y:533}
+}
+##^##*/

@@ -11,10 +11,46 @@ Window {
     height: 768
     visible: true
     title: "splash"
+    Rectangle {
+        width: 304
+        height: 280
+        z: 100
+        PathInterpolator {
+            id: motionPath
 
+            path: Path {
+                startX: 0; startY: 0
+
+                PathCubic {
+                    x: 350; y: 350
+
+                    control1X: 350; control1Y: 0
+                    control2X: 0; control2Y: 350
+                }
+            }
+
+            NumberAnimation on progress {
+                from: 0;
+                to: 1;
+                duration: 4000
+                loops: Animation.Infinite
+
+            }
+        }
+
+        Rectangle {
+            width: 50; height: 50
+            color: "green"
+
+            //bind our attributes to follow the path as progress changes
+            //            x: motionPath.x
+            //            y: motionPath.y
+            // rotation: motionPath.angle
+        }
+    }
     Image {
         id: root
-        source: "./img/background3Birds.svg"
+        source: "./img/background4Green.svg"
         fillMode: Image.Stretch
         property int stage
         anchors.horizontalCenter: parent.horizontalCenter
@@ -22,8 +58,8 @@ Window {
         sourceSize: Qt.size(parent.width, parent.height)
         onStageChanged: {
             if (stage == 1) {
-                introAnimation.running = true
-                introAnimation2.running = true
+                //                introAnimation.running = true
+                //                introAnimation2.running = true
             }
         }
         Rectangle {
@@ -35,27 +71,151 @@ Window {
             color: "#00ffffff"
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
-            Image {
-                id: imageBlue
-                width: 270
-                height: 270
-                anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
-                smooth: true
-                sourceSize: Qt.size(width, height)
-                source: "img/bounceBlue.svg"
+
+            Rectangle {
+                id: plasma
+                x: 62
+                y: 46
+                width: 228
+                height: 208
+                color: "#00000000"
+                Rectangle {
+                    id: rectangle1
+                    x: 14
+                    y: 4
+                    width: 200
+                    height: 200
+                    color: "#00000000"
+                    PropertyAnimation {
+                        id: animation;
+                        target: rectangle1;
+                        property: "x";
+                        from: -305
+                        to: 14;
+                        duration: 3000
+                        running: true;
+                        loops: Animation.Infinite
+                        onStarted: animation2.running = true
+
+                    }
+                    PropertyAnimation {
+                        id: animation1;
+                        target: rectangle1;
+                        property: "y";
+                        from: 66
+                        to: 4;
+                        duration: 3000
+                        running: true;
+                        loops: Animation.Infinite
+                    }
+                    PropertyAnimation {
+                        id: animation2;
+                        target: rectangle1;
+                        property: "opacity";
+                        from: 0
+                        to: 1;
+                        duration: 1500
+                        running: true;
+                        //loops: Animation.Infinite
+                    }
+//                    transitions: Transition {
+//                           //animate both theRect's and uselessItem's x and y to their final values
+//                           NumberAnimation { properties: "x,y" }
+
+//                           //animate theRect's z to its final value
+//                           NumberAnimation { target: theRect; property: "z" }
+//                       }
+                    Image {
+                        id: plasma1
+                        x: 14
+                        y: 4
+                        width: 200
+                        height: 200
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.verticalCenter: parent.verticalCenter
+                        source: "img/plasma1.svg"
+                        smooth: true
+                        sourceSize: Qt.size(parent.width, parent.height)
+                        fillMode: Image.PreserveAspectCrop
+
+
+                    }
+                }
+
+                Image {
+                    id: plasma2
+                    width: 200
+                    height: 200
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    smooth: true
+                    source: "img/plasma2.svg"
+                    sourceSize: Qt.size(parent.width, parent.height)
+                    fillMode: Image.PreserveAspectCrop
+                }
+
+                Image {
+                    id: plasma3
+                    width: 200
+                    height: 200
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    smooth: true
+                    source: "img/plasma3.svg"
+                    sourceSize: Qt.size(parent.width, parent.height)
+                    fillMode: Image.PreserveAspectCrop
+                }
+
+                Image {
+                    id: plasma4
+                    width: 200
+                    height: 200
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    smooth: true
+                    source: "img/plasma4.svg"
+                    sourceSize: Qt.size(parent.width, parent.height)
+                    fillMode: Image.PreserveAspectCrop
+                }
+
+
+
 
             }
+
+
             Image {
-                id: imagePink
-                width: 270
-                height: 270
-                anchors.verticalCenter: parent.verticalCenter
-                anchors.horizontalCenter: parent.horizontalCenter
-                smooth: true
-                sourceSize: Qt.size(width, height)
-                source: "img/bouncePink.svg"
+                id: rhomp
+                x: -507
+                y: -234
+                width: 1366
+                height: 768
+                source: "img/rhomp.svg"
+                sourceSize: Qt.size(parent.width, parent.height)
+                fillMode: Image.PreserveAspectCrop
             }
+
+            //            RotationAnimator {
+            //                id: introAnimation
+            //                target: imageBlue;
+            //                loops: Animation.Infinite
+            //                from: 0;
+            //                to: 360;
+            //                duration: 8000
+            //                running: true
+            //            }
+
+
+            //            RotationAnimator {
+            //                id: introAnimation2
+            //                target: imagePink;
+            //                loops: Animation.Infinite
+            //                from: 360;
+            //                to: 0;
+            //                duration: 5000
+            //                running: true
+            //            }
+
 
             Text {
                 id: element
@@ -63,8 +223,8 @@ Window {
                 y: 186
                 color: "#ffffff"
                 text: qsTr("Loading...")
-                anchors.verticalCenterOffset: 0
-                anchors.horizontalCenterOffset: 1
+                anchors.verticalCenterOffset: 190
+                anchors.horizontalCenterOffset: 0
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
                 font.family: "Tahoma"
@@ -72,41 +232,26 @@ Window {
                 font.pixelSize: 36
             }
 
-            RotationAnimator {
-                id: introAnimation
-                target: imageBlue;
-                loops: Animation.Infinite
-                from: 0;
-                to: 360;
-                duration: 8000
-                running: true
-            }
-            RotationAnimator {
-                id: introAnimation2
-                target: imagePink;
-                loops: Animation.Infinite
-                from: 360;
-                to: 0;
-                duration: 5000
-                running: true
-            }
+
+
+
+
         }
 
         Rectangle {
             id: secondsRect
             width: 550
-            height: 160
+            height: 81
             color: "#00000000"
-            anchors.bottom: loading.top
-            anchors.bottomMargin: -160
-            anchors.left: parent.left
-            anchors.leftMargin: 0
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: 0
 
             Text {
                 id: date
                 x: 25
                 width: 501
-                height: 157
+                height: 150
                 Text {
                     id: hours
                     y: 118
@@ -196,12 +341,14 @@ Window {
 
         Rectangle {
             id: year
+            x: 415
+            y: 604
             width: 536
-            height: 220
+            height: 164
             color: "#00000000"
-            anchors.bottom: loading.top
-            anchors.bottomMargin: -300
-            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 0
+            anchors.horizontalCenter: parent.horizontalCenter
 
             Rectangle {
                 id: rectangle4
@@ -219,7 +366,7 @@ Window {
                     y: 156
                     width: 97
                     height: 71
-                    color: "#ffffff"
+                    color: "#252324"
                     radius: 10
                     anchors.verticalCenter: parent.verticalCenter
                     border.width: 0
@@ -231,7 +378,7 @@ Window {
                     y: 156
                     width: 103
                     height: 71
-                    color: "#ffffff"
+                    color: "#252324"
                     radius: 10
                     anchors.verticalCenter: parent.verticalCenter
                     border.width: 0
@@ -243,7 +390,7 @@ Window {
                     y: 156
                     width: 187
                     height: 71
-                    color: "#ffffff"
+                    color: "#252324"
                     radius: 10
                     anchors.verticalCenter: parent.verticalCenter
                     border.width: 0
@@ -255,7 +402,7 @@ Window {
                     y: 113
                     width: 501
                     height: 157
-                    color: "#0ad3cd"
+                    color: "#26c534"
                     text: Qt.formatDateTime(new Date(),"yyyy  MM  dd")
                     font.capitalization: Font.Capitalize
                     verticalAlignment: Text.AlignVCenter
@@ -352,22 +499,20 @@ Window {
         Rectangle {
             id: plasma5
             x: 1264
-            y: 533
             width: 102
-            height: 104
+            height: 88
             color: "#00000000"
+            anchors.top: parent.top
             anchors.rightMargin: 0
-            anchors.bottom: parent.bottom
             anchors.right: parent.right
 
             Image {
                 id: image
                 x: 262
-                y: 116
                 width: 70
                 height: 70
+                anchors.top: parent.top
                 anchors.horizontalCenter: parent.horizontalCenter
-                anchors.verticalCenter: parent.verticalCenter
                 source: "img/plasma.svg"
                 fillMode: Image.PreserveAspectCrop
                 sourceSize: Qt.size(width, height);
@@ -400,20 +545,29 @@ Window {
                 id: element2
                 y: 21
                 width: 106
-                            height: 83
-                            color: "#ffffff"
-                            text: qsTr("Made by \n Night-App")
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            font.family: "Tahoma"
-                            anchors.bottom: parent.bottom
-                            verticalAlignment: Text.AlignVCenter
-                            font.pixelSize: 20
-                            horizontalAlignment: Text.AlignHCenter
-                        }
+                height: 83
+                color: "#ffffff"
+                text: qsTr("Made by \n Night-App")
+                anchors.horizontalCenter: parent.horizontalCenter
+                font.family: "Tahoma"
+                anchors.bottom: parent.bottom
+                verticalAlignment: Text.AlignVCenter
+                font.pixelSize: 20
+                horizontalAlignment: Text.AlignHCenter
+            }
             anchors.bottom: parent.bottom
         }
+
 
     }
 
 }
 
+
+
+
+/*##^##
+Designer {
+    D{i:15;anchors_height:491;anchors_width:1366;anchors_x:0;anchors_y:0}
+}
+##^##*/

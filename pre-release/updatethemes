@@ -1,0 +1,6 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Icon=displaycal-scripting-client
+Type=Application
+#URL[$e]=file:$HOME/khuj/Abstract-Mountain/pre-release/updateThems.sh
+Exec=$HOME/khuj/Abstract-Mountain/pre-release/updateThemes.sh
