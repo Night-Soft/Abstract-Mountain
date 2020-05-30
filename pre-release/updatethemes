@@ -1,6 +1,20 @@
-#!/usr/bin/env xdg-open
 [Desktop Entry]
-Icon=displaycal-scripting-client
+Comment[en_US]=
+Comment=
+Exec=$HOME/khuj/Kde-Splashscreen/pre-release/updateThemes.sh
+GenericName[en_US]=
+GenericName=
+Icon=mintupdate
+MimeType=
+Name[en_US]=
+Name=
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
 Type=Application
-#URL[$e]=file:$HOME/khuj/Abstract-Mountain/pre-release/updateThems.sh
-Exec=$HOME/khuj/Abstract-Mountain/pre-release/updateThemes.sh
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-RunOnDiscreteGpu=false
+X-KDE-SubstituteUID=false
+X-KDE-Username=

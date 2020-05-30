@@ -90,6 +90,24 @@ Window {
                 duration: 5000
                 running: true
             }
+            PropertyAnimation {
+            id: opacityAnim
+            property: "opacity"
+            target: loading
+            from: 0
+            to: 1
+            running: true
+            duration: 1000
+            }
+            PropertyAnimation {
+            id: scaleAnim
+            property: "scale"
+            target: loading
+            from: 0
+            to: 1
+            running: true
+            duration: 1000
+            }
         }
 
         Rectangle {

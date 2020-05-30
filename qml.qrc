@@ -2,7 +2,7 @@
     <qresource prefix="/">
         <file>Splash.qml</file>
         <file>img/bouncePink.svg</file>
-        <file>img/bounceBlue.svg</file>
+        <file>img/circleWhite.svg</file>
         <file>img/glowy.jpg</file>
         <file>img/background.jpg</file>
         <file>img/backgroun2.png</file>
@@ -12,18 +12,22 @@
         <file>img/background2.svg</file>
         <file>img/plasma.svg</file>
         <file>Made.qml</file>
-        <file>made_images/layer_1.png</file>
-        <file>made_images/vector_layer_1.png</file>
         <file>img/background3Birds.svg</file>
         <file>Splash3.qml</file>
         <file>img/background4Green.svg</file>
         <file>img/bounceGreen.svg</file>
-        <file>Splash4.qml</file>
+        <file>Square.qml</file>
         <file>img/plasma1.svg</file>
         <file>img/plasma2.svg</file>
         <file>img/plasma3.svg</file>
         <file>img/plasma4.svg</file>
         <file>testanim.qml</file>
         <file>img/rhomp.svg</file>
+        <file>Script.js</file>
+        <file>HoneycombBlue.qml</file>
+        <file>img/honeycombBlue.svg</file>
+        <file>img/circleBlue.svg</file>
+        <file>img/icon.svg</file>
+        <file>HoneyComb.js</file>
     </qresource>
 </RCC>
