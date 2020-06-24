@@ -24,6 +24,6 @@
         Or download archive from this repo, folder "release", then you need unpack archive to /home/"user name"/.local/share/plasma/look-and-feel/
         <br>
         View on
-        <a href="https://www.pling.com/u/night-app/products">PlingStore</a>
+        <a href="https://www.pling.com/u/night-app/">PlingStore</a>
     </p>
 </div>
