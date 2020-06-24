@@ -1,5 +1,5 @@
 #!/bin/bash
-currentDir="Red-Honeycomb"
+currentDir="Colors-Divide"
 copy=$((cp -r $HOME/khuj/Kde-Splashscreen/pre-release/$currentDir /$HOME/.local/share/plasma/look-and-feel/) 2>&1)
 len=$(expr length "$copy")
 echo $copy

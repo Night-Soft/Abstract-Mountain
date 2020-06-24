@@ -29,5 +29,7 @@
         <file>img/circleBlue.svg</file>
         <file>img/icon.svg</file>
         <file>HoneyComb.js</file>
+        <file>ColorsDivide.qml</file>
+        <file>ColorsDivide.js</file>
     </qresource>
 </RCC>

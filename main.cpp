@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 
 
     QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/Square.qml")));
+    engine.load(QUrl(QStringLiteral("qrc:/ColorsDivide.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 
