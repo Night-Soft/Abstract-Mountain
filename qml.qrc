@@ -31,5 +31,7 @@
         <file>HoneyComb.js</file>
         <file>ColorsDivide.qml</file>
         <file>ColorsDivide.js</file>
+        <file>SlideColors.js</file>
+        <file>SlideColors.qml</file>
     </qresource>
 </RCC>

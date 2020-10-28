@@ -6,7 +6,7 @@
 import QtQuick 2.5
 import QtQuick.Window 2.10
 
-import "ColorsDivide.js" as Script
+import "SlideColors.js" as Script
 
 Window {
     id: window
@@ -274,7 +274,9 @@ Window {
             easing.type: Easing.InQuad;
             onStopped: {
                 Script.setRectanglesGradient();
-                widthAnimOnStopped.restart();
+                //widthAnimOnStopped.restart();
+
+
             }
 
         }
@@ -289,8 +291,8 @@ Window {
         Timer {
             id: timerHeightAnimEnd;
             onTriggered: {
-                Script.setBackgroundGradient(); // for random backround
-                widthAnim.restart();
+                //Script.setBackgroundGradient(); // for random backround
+                //widthAnim.restart();
 
             }
         }
@@ -373,7 +375,7 @@ Window {
             Script.setRectanglesWidth();
             Script.setRectanglesGradient();
             Script.setBackgroundGradient() // for random backround
-            Script.heightAnimation();
+            Script.slideAnimation();
 
         }
 
